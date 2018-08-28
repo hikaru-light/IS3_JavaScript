@@ -1,6 +1,6 @@
 window.onload = () => {
     setInterval(function(){draw()}, 500);
-}
+};
 
 function draw() {
     const cvs = document.getElementById("myCanvas");
@@ -11,9 +11,9 @@ function draw() {
 
     const ctx = cvs.getContext("2d");
 
-    let x = Math.round(Math.random()*400);
-    let y = Math.round(Math.random()*400);
-    let col = Math.round(Math.random()*255);
+    const x = Math.round(Math.random()*400);
+    const y = Math.round(Math.random()*400);
+    const col = Math.round(Math.random()*255);
 
     ctx.fillStyle = `rgba(${col}, ${col}, ${col}, 0.5)`;
     ctx.beginPath();
@@ -22,11 +22,11 @@ function draw() {
     ctx.stroke();
 }
 
-document.getElementById("update").addEventListener("click",function(){
+document.getElementById("update").addEventListener("click",() => {
     draw();
-})
+});
 
-addEventListener("click",function(e){
+addEventListener("click", (e) => {
     const cvs = document.getElementById("myCanvas");
 
     if(!cvs || !cvs.getContext) {
@@ -39,4 +39,4 @@ addEventListener("click",function(e){
     ctx.arc(e.clientX, e.clientY, 50, 0*Math.PI, (360/180)*Math.PI);
     ctx.fill();
     ctx.stroke();
-})
+});
